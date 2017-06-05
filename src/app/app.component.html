@@ -1,3 +1,21 @@
 <h1>
   {{title}}
 </h1>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" enctype="multipart/form-data">
+  <div class="form-group col-md-12">
+    <label class="col-md-2 control-label" for="title">Title:</label>
+    <div class="col-md-10">
+      <input class="form-control" type="text" name="title" [(ngModel)]='title'>
+    </div>
+  </div>
+
+  <div class="col-md-10">
+    <input type="file" name="image" (change)="fileChangeEvent($event)">
+  </div>
+  
+
+
+  <button type="submit">Submit</button>
+
+  <img src="{{hero.link}}">
+</form>
